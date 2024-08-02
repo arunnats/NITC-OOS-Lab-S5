@@ -1,5 +1,5 @@
 import java.util.Scanner;
-class Factorial{
+class Q1{
     public static void main(String args[]){
         int fact = 1;
         Scanner sc = new Scanner(System.in);

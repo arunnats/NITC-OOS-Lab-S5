@@ -1,5 +1,6 @@
- import java.util.Scanner;  
- public class MenuDrivenCalculator {  
+import java.util.Scanner;  
+
+public class Q7 {  
         public static void main(String[] args) {  
         Scanner input = new Scanner(System.in);  
         int choice;  
@@ -91,4 +92,4 @@
             System.out.println("Error: Division by zero is not allowed.");  
         }  
     }  
- } 
+} 

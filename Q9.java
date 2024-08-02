@@ -1,6 +1,6 @@
 import java.util.*;
 
-class CharFreq{
+class Q9{
     public static void main(String args[]){
         int[] chars = new int[26];
         Scanner sc = new Scanner(System.in);

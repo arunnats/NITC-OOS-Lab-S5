@@ -2,7 +2,7 @@ import java.lang.*;
 import java.io.*;
 import java.util.*;
 
-class SwapStrings{
+class Q10{
     public static void main(String args[]){
         Scanner sc = new Scanner(System.in);
 
