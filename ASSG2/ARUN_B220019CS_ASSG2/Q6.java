@@ -13,8 +13,21 @@ public class Q6 {
     System.out.print("Are you vegetarian? (yes/no): ");
     boolean isVegetarian = sc.next().equalsIgnoreCase("yes");
 
-    System.out.print("Enter the number of days: ");
-    int numberOfDays = sc.nextInt();
+    int numberOfDays = 0;
+    while (true) {
+      System.out.print("Enter the number of days: ");
+      if (sc.hasNextInt()) {
+        numberOfDays = sc.nextInt();
+        if (numberOfDays > 0) {
+          break;
+        } else {
+          System.out.println("Please enter a positive number of days.");
+        }
+      } else {
+        System.out.println("Invalid input. Please enter an integer.");
+        sc.next();
+      }
+    }
 
     Person p;
 
