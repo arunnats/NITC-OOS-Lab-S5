@@ -48,6 +48,6 @@ class Solution{
                 }
             }
         }
-        return longestCommonSubstring;
+      return longestCommonSubstring;
   }
 }
