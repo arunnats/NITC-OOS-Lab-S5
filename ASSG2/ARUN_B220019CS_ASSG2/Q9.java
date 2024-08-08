@@ -12,7 +12,7 @@ public class Q9 {
     for (int i = 0; i < numStudents; i++) {
       System.out.print("Enter roll number: ");
       int rollNumber = sc.nextInt();
-      sc.nextLine(); 
+      sc.nextLine();
 
       System.out.print("Enter full name: ");
       String fullName = sc.nextLine();
@@ -27,12 +27,12 @@ public class Q9 {
       classroom.displayTeacherOptions();
       System.out.print("Choose a teacher by ID: ");
       int teacherID = sc.nextInt();
-      sc.nextLine(); 
+      sc.nextLine();
 
       Teacher assignedTeacher = classroom.getTeacherByID(teacherID);
       if (assignedTeacher == null) {
-          System.out.println("Invalid teacher ID.");
-          continue;
+        System.out.println("Invalid teacher ID.");
+        continue;
       }
 
       Student student = new Student(rollNumber, fullName, height, weight, assignedTeacher);
@@ -43,7 +43,7 @@ public class Q9 {
     classroom.printStudentsSortedByHeight();
     classroom.printStudentNamesAndTeachers();
 
-    sc.close();  
+    sc.close();
   }
 }
 
@@ -65,22 +65,22 @@ class Classroom {
     students.sort(Comparator.comparingDouble(Student::getHeight));
     System.out.println("All students sorted by height:");
     for (Student student : students) {
-        System.out.println(student);
+      System.out.println(student);
     }
   }
 
   public void printStudentNamesAndTeachers() {
     System.out.println("Student Names and their Assigned Teachers:");
     for (Student student : students) {
-        System.out.println(student.getFullName() + " - " + student.getAssignedTeacher());
+      System.out.println(student.getFullName() + " - " + student.getAssignedTeacher());
     }
   }
 
   public void displayTeacherOptions() {
-      System.out.println("Available teachers:");
-      for (Teacher teacher : teachers) {
-          System.out.println(teacher.getTeacherID() + ". " + teacher.getTeacherName());
-      }
+    System.out.println("Available teachers:");
+    for (Teacher teacher : teachers) {
+      System.out.println(teacher.getTeacherID() + ". " + teacher.getTeacherName());
+    }
   }
 
   public Teacher getTeacherByID(int id) {
@@ -111,36 +111,36 @@ class Student {
   private Teacher assignedTeacher;
 
   public Student(int rollNumber, String fullName, int height, int weight, Teacher assignedTeacher) {
-      this.rollNumber = rollNumber;
-      this.fullName = fullName;
-      this.height = height;
-      this.weight = weight;
-      this.assignedTeacher = assignedTeacher;
+    this.rollNumber = rollNumber;
+    this.fullName = fullName;
+    this.height = height;
+    this.weight = weight;
+    this.assignedTeacher = assignedTeacher;
   }
 
   public int getRollNumber() {
-      return rollNumber;
+    return rollNumber;
   }
 
   public String getFullName() {
-      return fullName;
+    return fullName;
   }
 
   public int getHeight() {
-      return height;
+    return height;
   }
 
   public int getWeight() {
-      return weight;
+    return weight;
   }
 
   public Teacher getAssignedTeacher() {
-      return assignedTeacher;
+    return assignedTeacher;
   }
 
   @Override
   public String toString() {
-      return "Roll Number: " + rollNumber + "\n" + "Full Name: " + fullName + "\n" + "Height: " + height + "\n" + "Weight: " + weight + "\n" + "Assigned Teacher: " + (assignedTeacher != null ? assignedTeacher.getTeacherName() : "None") + "\n";
+    return "Roll Number: " + rollNumber + "\n" + "Full Name: " + fullName + "\n" + "Height: " + height + "\n" + "Weight: " + weight + "\n" + "Assigned Teacher: " + (assignedTeacher != null ? assignedTeacher.getTeacherName() : "None") + "\n";
   }
 }
 
@@ -149,20 +149,20 @@ class Teacher {
   private String teacherName;
 
   public Teacher(int teacherID, String teacherName) {
-      this.teacherID = teacherID;
-      this.teacherName = teacherName;
+    this.teacherID = teacherID;
+    this.teacherName = teacherName;
   }
 
   public int getTeacherID() {
-      return teacherID;
+    return teacherID;
   }
 
   public String getTeacherName() {
-      return teacherName;
+    return teacherName;
   }
 
   @Override
   public String toString() {
-      return teacherName;
+    return teacherName;
   }
 }
