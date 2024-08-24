@@ -4,8 +4,8 @@ public class Q2 {
     public static void main(String[] args) {
         HierarchicalManager<Entity> manager = new HierarchicalManager<>();
 
-        Employee employee1 = new Employee("John Doe");
-        Manager manager1 = new Manager("Jane Smith");
+        Employee employee1 = new Employee("Aditya Kamble");
+        Manager manager1 = new Manager("Arun Natarajan");
 
         manager.addEntity(employee1);
         manager.addEntity(manager1);
@@ -77,19 +77,13 @@ class HierarchicalManager<T extends Entity> {
         return result;
     }
 
-    public void printHierarchy() throws EmptyHierarchyException {
+    public void printHierarchy() {
         if (entities.isEmpty()) {
-            throw new EmptyHierarchyException("No entities in the hierarchy.");
+            System.out.println("No entities.");
         } else {
             for (T entity : entities) {
                 System.out.println(entity);
             }
         }
     }    
-}
-
-class EmptyHierarchyException extends Exception {
-    public EmptyHierarchyException(String message) {
-        super(message);
-    }
 }

@@ -4,15 +4,15 @@ public class Q1 {
     public static void main(String[] args) {
         Inventory<Product> inventory = new Inventory<>();
 
-        Electronics laptop = new Electronics("Laptop", 24);
-        Clothing shirt = new Clothing("Shirt", "M");
+        Electronics ipad = new Electronics("Ipad", 12);
+        Clothing shirt = new Clothing("Shirt", "L");
 
-        inventory.addProduct(laptop);
+        inventory.addProduct(ipad);
         inventory.addProduct(shirt);
 
         inventory.listProducts();
 
-        inventory.removeProduct(laptop);
+        inventory.removeProduct(ipad);
 
         inventory.listProducts();
     }
@@ -33,6 +33,7 @@ class Inventory<T extends Product> {
         if (products.isEmpty()) {
             System.out.println("Inventory is empty.");
         } else {
+            System.out.println("List of products:");
             for (T product : products) {
                 System.out.println(product);
             }
@@ -71,7 +72,7 @@ class Electronics extends Product {
 
     @Override
     public String toString() {
-        return "Electronics: " + getName() + ", Warranty Period: " + warrantyPeriod + " months";
+        return "Electronics: " + this.getName() + ", Warranty Period: " + this.getWarrantyPeriod() + " months";
     }
 }
 
@@ -89,6 +90,6 @@ class Clothing extends Product {
 
     @Override
     public String toString() {
-        return "Clothing: " + getName() + ", Size: " + size;
+        return "Clothing: " + this.getName() + ", Size: " + this.getSize();
     }
 }
