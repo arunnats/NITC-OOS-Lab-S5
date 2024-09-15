@@ -24,6 +24,10 @@ class BookingApp {
     }
 
     public void bookTransport(String pickup, String dropoff, int passengers) {
-        System.out.println("You have booked Cab from " + pickup + " to " + dropoff + " with " + passengers + " passengers." );
+        if (passengers > 0) {
+            System.out.println("You have booked a Cab from " + pickup + " to " + dropoff + " for " + passengers + " passengers.");
+        } else {
+            System.out.println("Number of passengers must be greater than zero.");
+        }
     }
 }
