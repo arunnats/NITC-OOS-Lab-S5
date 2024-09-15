@@ -17,96 +17,96 @@ public class Q7 {
 }
 
 abstract class Person {
-  protected String name;
-  protected String id;
-  protected String department;
+    protected String name;
+    protected String id;
+    protected String department;
 
-  public Person(String name, String id, String department) {
-      this.name = name;
-      this.id = id;
-      this.department = department;
-  }
+    public Person(String name, String id, String department) {
+        this.name = name;
+        this.id = id;
+        this.department = department;
+    }
 
-  public abstract String getRole();
-  public abstract double calculateWorkload();
-  
-  public String getDetails() {
-      return "Name: " + name + ", ID: " + id + ", Department: " + department;
-  }
+        public abstract String getRole();
+    public abstract double calculateWorkload();
+    
+    public String getDetails() {
+        return "Name: " + name + ", ID: " + id + ", Department: " + department;
+    }
 }
 
 interface Responsibility {
-  void listResponsibilities();
+    void listResponsibilities();
 }
 
 class Professor extends Person implements Responsibility {
-  private int coursesTaught;
-  private int researchProjects;
+    private int coursesTaught;
+    private int researchProjects;
 
-  public Professor(String name, String id, String department, int coursesTaught, int researchProjects) {
-      super(name, id, department);
-      this.coursesTaught = coursesTaught;
-      this.researchProjects = researchProjects;
-  }
+    public Professor(String name, String id, String department, int coursesTaught, int researchProjects) {
+        super(name, id, department);
+        this.coursesTaught = coursesTaught;
+        this.researchProjects = researchProjects;
+    }
 
-  @Override
-  public String getRole() {
-      return "Professor";
-  }
+    @Override
+    public String getRole() {
+        return "Professor";
+    }
 
-  @Override
-  public double calculateWorkload() {
-      return (coursesTaught * 3) + (researchProjects * 2);
-  }
+    @Override
+    public double calculateWorkload() {
+        return (coursesTaught * 3) + (researchProjects * 2);
+    }
 
-  @Override
-  public void listResponsibilities() {
-      System.out.println("Responsibilities: Teaching, Research, Mentoring Students");
-  }
+    @Override
+    public void listResponsibilities() {
+        System.out.println("Responsibilities: Teaching, Research, Mentoring Students");
+    }
 }
 
 class Student extends Person {
-  private int creditsEnrolled;
-  private double gpa;
+    private int creditsEnrolled;
+    private double gpa;
 
-  public Student(String name, String id, String department, int creditsEnrolled, double gpa) {
-      super(name, id, department);
-      this.creditsEnrolled = creditsEnrolled;
-      this.gpa = gpa;
-  }
+    public Student(String name, String id, String department, int creditsEnrolled, double gpa) {
+        super(name, id, department);
+        this.creditsEnrolled = creditsEnrolled;
+        this.gpa = gpa;
+    }
 
-  @Override
-  public String getRole() {
-      return "Student";
-  }
+    @Override
+    public String getRole() {
+        return "Student";
+    }
 
-  @Override
-  public double calculateWorkload() {
-      return creditsEnrolled;
-  }
+    @Override
+    public double calculateWorkload() {
+        return creditsEnrolled;
+    }
 }
 
 class AdministrativeStaff extends Person implements Responsibility {
-  private int tasksHandled;
+    private int tasksHandled;
 
-  public AdministrativeStaff(String name, String id, String department, int tasksHandled) {
-      super(name, id, department);
-      this.tasksHandled = tasksHandled;
-  }
+    public AdministrativeStaff(String name, String id, String department, int tasksHandled) {
+        super(name, id, department);
+        this.tasksHandled = tasksHandled;
+    }
 
-  @Override
-  public String getRole() {
-      return "Administrative Staff";
-  }
+    @Override
+    public String getRole() {
+        return "Administrative Staff";
+    }
 
-  @Override
-  public double calculateWorkload() {
-      return tasksHandled * 1.5;
-  }
+    @Override
+    public double calculateWorkload() {
+        return tasksHandled * 1.5;
+    }
 
-  @Override
-  public void listResponsibilities() {
-      System.out.println("Responsibilities: Managing Files, Organizing Events, Supporting Faculty");
-  }
+    @Override
+    public void listResponsibilities() {
+        System.out.println("Responsibilities: Managing Files, Organizing Events, Supporting Faculty");
+    }
 }
 
