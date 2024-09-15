@@ -11,7 +11,7 @@ public class Q2 {
         ArrayList<String[]> transactions = new ArrayList<>(); 
 
         for (int i = 0; i < n; i++) {
-            String[] transactionDetails = sc.nextLine().split(" ");
+            String[] transactionDetails = sc.nextLine().split( " ");
             transactions.add(transactionDetails);
         }
 
