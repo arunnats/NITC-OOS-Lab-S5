@@ -18,7 +18,6 @@ public class Q1 {
 
         System.out.println("Total price of above quantites and prices with discount 10%");
         System.out.println(E.calculateTotalPrice(E.calculateTotalPrice(q,p ), 10.0));
-
     }
 }
 

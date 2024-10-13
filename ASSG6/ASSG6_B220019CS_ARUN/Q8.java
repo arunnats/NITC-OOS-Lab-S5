@@ -1,4 +1,4 @@
-public class Q8 {
+  public class Q8 {
   public static void main(String[] args) {
     EventManager manager = new EventManager();
     Event concert = new Concert("Summer Music Festival", 100, "The Jazz Band");
